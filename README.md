@@ -25,12 +25,12 @@ This bot is designed to give Twitch streamers the power of the Ollama API for ge
 2. Install the dependencies:
     ```
     cd ollama-twitch
-    yarn install
+    npm install
     ```
 
 3. Run the bot:
     ```
-    yarn start
+    npm start
     ```
 
 ## Configuration
@@ -43,6 +43,7 @@ This bot is designed to give Twitch streamers the power of the Ollama API for ge
     OLLAMAURL=127.0.0.1:11434
     CUSTOMMODEL=
     TRIGGER=!llama
+    SYSTEMPROMPT="You are a twitch chatbot."
     ```
 
 ## Usage
