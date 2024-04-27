@@ -25,7 +25,7 @@ client.on('message', async (channel, tags, message, self) => {
 
     if (message.toLowerCase().startsWith(trigger)) {
         isProcessing = true;
-        client.say(channel, '🦙');
+        client.say(channel, '🔮');
 
         const query: string = message.replace(trigger, '').trim();
         if (query.length === 0) {
@@ -38,7 +38,10 @@ client.on('message', async (channel, tags, message, self) => {
         };
 
         try {
-            await makeOllamaRequest(query, sendChunks);
+
+            const username = tags.username || 'ollama';
+
+            await makeOllamaRequest(query, username, sendChunks);
         } catch (err: any) {
             console.error(err);
         } finally {
